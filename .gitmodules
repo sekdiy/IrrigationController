@@ -1,9 +1,0 @@
-[submodule "libraries/Relay"]
-	path = libraries/Relay
-	url = https://sekdiy@github.com/sekdiy/Relay.git
-[submodule "libraries/FlowMeter"]
-	path = libraries/FlowMeter
-	url = https://sekdiy@github.com/sekdiy/FlowMeter.git
-[submodule "libraries/IrrigationZone"]
-	path = libraries/IrrigationZone
-	url = https://sekdiy@github.com/sekdiy/IrrigationZone.git
