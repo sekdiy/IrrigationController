@@ -6,13 +6,13 @@
  * @version 4
  */
 
-#include <TimerOne.h>                   // https://github.com/PaulStoffregen/TimerOne 
 #include <Streaming.h>                  // http://arduiniana.org/libraries/streaming/
 #include <LED.h>                        // http://playground.arduino.cc/Code/LED
 #include <DS3232RTC.h>                  // http://github.com/JChristensen/DS3232RTC
 #include <Wire.h>                       // http://arduino.cc/en/Reference/Wire
-#include <TimeAlarms.h>                 // https://www.pjrc.com/teensy/td_libs_TimeAlarms.html
-#include <Time.h>                       // http://www.arduino.cc/playground/Code/Time  
+#include <TimeAlarms.h>                 // https://github.com/PaulStoffregen/TimeAlarms
+#include <TimerOne.h>                   // https://github.com/PaulStoffregen/TimerOne 
+#include <Time.h>                       // https://github.com/PaulStoffregen/Time 
 #include <Sensirion.h>                  // http://playground.arduino.cc/Code/Sensirion
 #include <Relay.h>                      // Relay library
 #include <FlowMeter.h>                  // Flow Meter library
@@ -99,7 +99,7 @@ void loop() {
   /* only process once per tick */
   if (tickHistory != tickCount) {
 
-    Alarm.serviceAlarms();                   // run the irrigation scheduler
+    Alarm.delay(0);                          // run the irrigation scheduler (odd way of saying: TimeAlarms::serviceAlarms())
     DEBUG_LED.toggle();                      // show a pulse, indicating that we might still be alive
   
     Meter.tick(tickPeriod);                  // update flow meter calculations
